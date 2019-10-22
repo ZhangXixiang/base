@@ -1,6 +1,4 @@
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class TestFuture {
 
@@ -9,7 +7,29 @@ public class TestFuture {
 
     public static void main(String[] args) {
 
-        for(int i = 0; i < 10000 ; i++) {
+
+        final FutureTask<String> futureTask = new FutureTask<>(new Callable<String>() {
+            @Override
+            public String call() throws Exception {
+                return "hello";
+            }
+        });
+
+        Thread thread = new Thread(futureTask);
+        thread.start();
+
+
+        String s = null;
+        try {
+            s = futureTask.get();
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+        } finally {
+            System.out.println(s);
+        }
+
+
+        for (int i = 0; i < 10000; i++) {
             int finalI = i;
             executorService.submit(() -> {
                 System.out.println("abc");
