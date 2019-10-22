@@ -17,7 +17,9 @@ public class TestFuture {
             });
         }
 
-        //中断线程池，可以看到queue中的等待数，执行过程就明白了
+        // 中断线程池，可以看到queue中的等待数，执行过程就明白了
+        // abcjava.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@4fca772d rejected from java.util.concurrent.ThreadPoolExecutor@9807454
+        // [Shutting down, pool size = 4, active threads = 4, queued tasks = 6284, completed tasks = 3708]
         executorService.shutdown();
 
 
