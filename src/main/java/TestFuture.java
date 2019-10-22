@@ -17,6 +17,7 @@ public class TestFuture {
             });
         }
 
+        //中断线程池，可以看到queue中的等待数，执行过程就明白了
         executorService.shutdown();
 
 
