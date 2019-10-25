@@ -55,6 +55,8 @@ public class TestList {
 
         System.out.println("finish");
 
+        TestMain.main(newList.toArray(new String[0]));
 
+        TestMain testMain = new TestMain();
     }
 }
