@@ -28,6 +28,12 @@ public class TestList {
         list.add(myClasss4);
         list.add(myClasss5);
 
+        List<MyClasss> list1 = new ArrayList<>();
+        list1.add(myClasss);
+
+        list1 = list;
+
+
         Iterator<MyClasss> iterator = list.iterator();
 
         List<MyClasss> newList = new ArrayList<>();
@@ -58,5 +64,11 @@ public class TestList {
         TestMain.main(newList.toArray(new String[0]));
 
         TestMain testMain = new TestMain();
+
+
+
+
+
+
     }
 }
